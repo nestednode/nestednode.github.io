@@ -1,0 +1,48 @@
+html {
+  margin: 0;
+}
+.keymap {
+  margin: 0 auto;
+  max-width: 800px;
+  background: #fff;
+  border-spacing: 25px 10px;
+}
+.keymap__shortcut {
+  text-align: right;
+  vertical-align: top;
+}
+.keymap__mod {
+  margin-right: 10px;
+  font-size: 19px;
+}
+.keymap__key {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 24px 26px 5px 7px;
+  background-color: #333;
+}
+.keymap__key_right {
+  padding-left: 24px;
+  padding-right: 7px;
+}
+.keymap__descr {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.6;
+  vertical-align: bottom;
+}
+.xx_key {
+  display: inline-block;
+  margin: 0 4px;
+  border-radius: 5px;
+  height: 24px;
+  background-color: #333;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 23px auto;
+  padding: 0 4px 1px;
+}
+.xx_key_tab {
+  background-image: url('img/tab.svg');
+  width: 45px;
+}

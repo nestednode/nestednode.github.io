@@ -1,0 +1,68 @@
+html {
+    margin: 0;
+}
+body {
+}
+
+
+
+.keymap {
+    margin: 0 auto;
+    max-width: 800px;
+    background: #fff;
+    border-spacing: 25px 10px;
+
+
+    &__shortcut {
+        text-align: right;
+        vertical-align: top;
+    }
+
+    &__mod {
+        margin-right: 10px;
+        //vertical-align: middle;
+        font-size: 19px;
+    }
+
+    &__key {
+        display: inline-block;
+        border-radius: 5px;
+        padding: 24px 26px 5px 7px;
+        background-color: #333;
+
+        &_right {
+            padding-left: 24px;
+            padding-right: 7px;
+        }
+    }
+
+    &__descr {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 19px;
+        line-height: 1.6;
+        //vertical-align: middle;
+        vertical-align: bottom;
+    }
+
+
+}
+
+
+
+.xx_key {
+    display: inline-block;
+    margin: 0 4px;
+    border-radius: 5px;
+    height: 24px;
+    background-color: #333;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 23px auto;
+    padding: 0 4px 1px;
+
+
+    &_tab {
+        background-image: url('img/tab.svg');
+        width: 45px;
+    }
+}

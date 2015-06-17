@@ -1,0 +1,39 @@
+doctype
+html
+    head
+        meta(charset='utf-8')
+        link(rel='stylesheet' href='index.css')
+    body
+        .content
+            table.keymap
+                tr
+                    td.keymap__shortcut
+                        span.keymap__key
+                            img(src='img/tab.svg')
+                    td.keymap__descr добавить внутрь
+                tr
+                    td.keymap__shortcut
+                        span.keymap__mod ⇧
+                        span.keymap__key
+                            img(src='img/tab.svg')
+                    td.keymap__descr упаковать
+                tr
+                    td
+                tr
+                    td.keymap__shortcut
+                        span.keymap__key.keymap__key_right
+                            img(src='img/return.svg')
+                    td.keymap__descr добавить после
+                tr
+                    td.keymap__shortcut
+                        span.keymap__mod ⇧
+                        span.keymap__key.keymap__key_right
+                            img(src='img/return.svg')
+                    td.keymap__descr добавить перед
+                tr
+                    td
+                tr
+                    td.keymap__shortcut
+                        span.keymap__key.keymap__key_right
+                            img(src='img/delete.svg')
+                    td.keymap__descr удалить
