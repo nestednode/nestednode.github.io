@@ -16,53 +16,98 @@ body {
     &__shortcut {
         text-align: right;
         vertical-align: top;
-    }
-
-    &__mod {
-        margin-right: 10px;
-        //vertical-align: middle;
-        font-size: 19px;
-    }
-
-    &__key {
-        display: inline-block;
-        border-radius: 5px;
-        padding: 24px 26px 5px 7px;
-        background-color: #333;
-
-        &_right {
-            padding-left: 24px;
-            padding-right: 7px;
-        }
+        white-space: nowrap;
     }
 
     &__descr {
         font-family: Helvetica, Arial, sans-serif;
         font-size: 19px;
         line-height: 1.6;
-        //vertical-align: middle;
-        vertical-align: bottom;
+        vertical-align: middle;
     }
-
 
 }
 
 
+.key {
+    @bg: #333;
+    @bg-mod-key: #fff;
+    @radius: 5px;
 
-.xx_key {
     display: inline-block;
-    margin: 0 4px;
-    border-radius: 5px;
-    height: 24px;
-    background-color: #333;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 23px auto;
-    padding: 0 4px 1px;
+    position: relative;
+    border-radius: @radius;
+    height: 49px;
+    background-color: @bg;
+    .bg-sprite();
 
 
-    &_tab {
-        background-image: url('img/tab.svg');
-        width: 45px;
+    .bg-sprite() {
+        background-image: url('img/keys.svg');
+        background-repeat: no-repeat;
+    }
+    .bg-sprite-pos(@n, @offset-fix: 0) {
+        @sprite-offset: -50px;
+        background-position-y: @n * @sprite-offset + @offset-fix;
+    }
+    .func-key(@n, @width) {
+        .bg-sprite-pos(@n);
+        width: @width;
+    }
+    .letter-key(@n) {
+        .func-key(@n, 51px);
+        background-position-x: center;
+    }
+    .mod-key(@n, @width) {
+        margin-right: -@radius * 2;
+        width: @width;
+        background: -webkit-linear-gradient(0, @bg 40%, @bg-mod-key 90%);
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 1px;
+            bottom: 1px;
+            left: 1px;
+            right: 1px;
+            border-radius: @radius;
+            background-color: @bg-mod-key;
+            .bg-sprite();
+            .bg-sprite-pos(@n, -1);
+        }
+    }
+
+
+
+    &_a { .letter-key(10) }
+    &_c { .letter-key(11) }
+    &_d { .letter-key(12) }
+    &_v { .letter-key(13) }
+    &_x { .letter-key(14) }
+    &_y { .letter-key(15) }
+    &_z { .letter-key(16) }
+
+    &_esc { .func-key(5, 60px) }
+    &_tab { .func-key(6, 80px) }
+    &_delete { .func-key(7, 90px) }
+    &_return { .func-key(8, 100px) }
+    &_f2 { .func-key(9, 60px) }
+
+    &_shift { .mod-key(0, 120px) }
+
+    &_ctrl {
+        .mod-key(1, 100px);
+        html.mac & {
+            width: 130px;
+            &:before { .bg-sprite-pos(2, -1); }
+        }
+    }
+    &_alt {
+        .mod-key(3, 100px);
+        html.mac & {
+            width: 130px;
+            &:before { .bg-sprite-pos(4, -1); }
+        }
     }
 }

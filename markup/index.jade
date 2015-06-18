@@ -1,39 +1,29 @@
+mixin keymap-item(shortcut)
+    tr
+        td.keymap__shortcut
+            each key in shortcut
+                .key(class = 'key_' + key)
+        td.keymap__descr
+            block
+
+
 doctype
-html
+html.mac
     head
         meta(charset='utf-8')
         link(rel='stylesheet' href='index.css')
     body
         .content
             table.keymap
-                tr
-                    td.keymap__shortcut
-                        span.keymap__key
-                            img(src='img/tab.svg')
-                    td.keymap__descr добавить внутрь
-                tr
-                    td.keymap__shortcut
-                        span.keymap__mod ⇧
-                        span.keymap__key
-                            img(src='img/tab.svg')
-                    td.keymap__descr упаковать
-                tr
-                    td
-                tr
-                    td.keymap__shortcut
-                        span.keymap__key.keymap__key_right
-                            img(src='img/return.svg')
-                    td.keymap__descr добавить после
-                tr
-                    td.keymap__shortcut
-                        span.keymap__mod ⇧
-                        span.keymap__key.keymap__key_right
-                            img(src='img/return.svg')
-                    td.keymap__descr добавить перед
-                tr
-                    td
-                tr
-                    td.keymap__shortcut
-                        span.keymap__key.keymap__key_right
-                            img(src='img/delete.svg')
-                    td.keymap__descr удалить
+                +keymap-item(['tab']) добавить внутрь
+                +keymap-item(['shift', 'tab']) упаковать
+                +keymap-item(['return']) добавить после
+                +keymap-item(['shift', 'return']) добавить перед
+                +keymap-item(['delete']) удалить
+                +keymap-item(['ctrl', 'a']) выбрать все узлы одного родителя
+                +keymap-item(['ctrl', 'c']) копировать
+                +keymap-item(['ctrl', 'd']) дублировать
+                +keymap-item(['ctrl', 'v']) вставить
+                +keymap-item(['ctrl', 'x']) вырезать
+                +keymap-item(['ctrl', 'z']) отменить
+                +keymap-item(['ctrl', 'y']) вернуть
