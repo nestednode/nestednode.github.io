@@ -37,30 +37,25 @@ body {
     display: inline-block;
     position: relative;
     border-radius: @radius;
-    height: 49px;
+    .width(51px, 31px);
+    height: 49px; &_small { height: 30px }
     background-color: @bg;
-    .bg-sprite();
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-image: url('img/keys.svg'); &_small { background-image: url('img/keys-small.svg') }
 
+    .width(@w-normal, @w-small: @w-normal * 0.75) {
+        width: @w-normal;
+        &.key_small {
+            width: @w-small;
+        }
+    }
+    .sprite-pos(@n) {
+        background-position-y: @n * -50px;
+    }
 
-    .bg-sprite() {
-        background-image: url('img/keys.svg');
-        background-repeat: no-repeat;
-    }
-    .bg-sprite-pos(@n, @offset-fix: 0) {
-        @sprite-offset: -50px;
-        background-position-y: @n * @sprite-offset + @offset-fix;
-    }
-    .func-key(@n, @width) {
-        .bg-sprite-pos(@n);
-        width: @width;
-    }
-    .letter-key(@n) {
-        .func-key(@n, 51px);
-        background-position-x: center;
-    }
-    .mod-key(@n, @width) {
+    &_shift, &_ctrl, &_alt {
         margin-right: -@radius * 2;
-        width: @width;
         background: -webkit-linear-gradient(0, @bg 40%, @bg-mod-key 90%);
 
         &:before {
@@ -73,41 +68,44 @@ body {
             right: 1px;
             border-radius: @radius;
             background-color: @bg-mod-key;
-            .bg-sprite();
-            .bg-sprite-pos(@n, -1);
+            background-image: url('img/keys.svg');
+            background-repeat: no-repeat;
         }
+        &.key_small:before { background-image: url('img/keys-small.svg') }
     }
 
+    &_a { .sprite-pos(10) }
+    &_c { .sprite-pos(11) }
+    &_d { .sprite-pos(12) }
+    &_v { .sprite-pos(13) }
+    &_x { .sprite-pos(14) }
+    &_y { .sprite-pos(15) }
+    &_z { .sprite-pos(16) }
 
-
-    &_a { .letter-key(10) }
-    &_c { .letter-key(11) }
-    &_d { .letter-key(12) }
-    &_v { .letter-key(13) }
-    &_x { .letter-key(14) }
-    &_y { .letter-key(15) }
-    &_z { .letter-key(16) }
-
-    &_esc { .func-key(5, 60px) }
-    &_tab { .func-key(6, 80px) }
+    .func-key(@n, @width) {
+        background-position-x: left;
+        .sprite-pos(@n);
+        .width(@width);
+    }
+    &_esc    { .func-key(5, 60px) }
+    &_tab    { .func-key(6, 80px) }
     &_delete { .func-key(7, 90px) }
     &_return { .func-key(8, 100px) }
-    &_f2 { .func-key(9, 60px) }
+    &_f2     { .func-key(9, 60px) }
 
-    &_shift { .mod-key(0, 120px) }
-
+    .mod-key(@n, @width) {
+        .width(@width);
+        &:before { .sprite-pos(@n) };
+    }
+    &_shift {
+        .mod-key(0, 85px)
+    }
     &_ctrl {
         .mod-key(1, 100px);
-        html.mac & {
-            width: 130px;
-            &:before { .bg-sprite-pos(2, -1); }
-        }
+        html.mac & { .mod-key(2, 130px) }
     }
     &_alt {
         .mod-key(3, 100px);
-        html.mac & {
-            width: 130px;
-            &:before { .bg-sprite-pos(4, -1); }
-        }
+        html.mac & { .mod-key(4, 130px) }
     }
 }

@@ -1,8 +1,8 @@
-mixin keymap-item(shortcut)
+mixin keymap-item(shortcut, small)
     tr
         td.keymap__shortcut
             each key in shortcut
-                .key(class = 'key_' + key)
+                .key(class = 'key_' + key + (small ? ' key_small' : ''))
         td.keymap__descr
             block
 
@@ -21,9 +21,22 @@ html.mac
                 +keymap-item(['shift', 'return']) добавить перед
                 +keymap-item(['delete']) удалить
                 +keymap-item(['ctrl', 'a']) выбрать все узлы одного родителя
-                +keymap-item(['ctrl', 'c']) копировать
                 +keymap-item(['ctrl', 'd']) дублировать
-                +keymap-item(['ctrl', 'v']) вставить
+                +keymap-item(['ctrl', 'c']) копировать
                 +keymap-item(['ctrl', 'x']) вырезать
+                +keymap-item(['ctrl', 'v']) вставить
                 +keymap-item(['ctrl', 'z']) отменить
                 +keymap-item(['ctrl', 'y']) вернуть
+            table.keymap
+                +keymap-item(['tab'], 1) добавить внутрь
+                +keymap-item(['shift', 'tab'], 1) упаковать
+                +keymap-item(['return'], 1) добавить после
+                +keymap-item(['shift', 'return'], 1) добавить перед
+                +keymap-item(['delete'], 1) удалить
+                +keymap-item(['ctrl', 'a'], 1) выбрать все узлы одного родителя
+                +keymap-item(['ctrl', 'd'], 1) дублировать
+                +keymap-item(['ctrl', 'c'], 1) копировать
+                +keymap-item(['ctrl', 'x'], 1) вырезать
+                +keymap-item(['ctrl', 'v'], 1) вставить
+                +keymap-item(['ctrl', 'z'], 1) отменить
+                +keymap-item(['ctrl', 'y'], 1) вернуть

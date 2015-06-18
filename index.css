@@ -22,115 +22,30 @@ html {
   display: inline-block;
   position: relative;
   border-radius: 5px;
+  width: 51px;
   height: 49px;
   background-color: #333333;
-  background-image: url('img/keys.svg');
   background-repeat: no-repeat;
-}
-.key_a {
-  background-position-y: -500px;
-  width: 51px;
   background-position-x: center;
-}
-.key_c {
-  background-position-y: -550px;
-  width: 51px;
-  background-position-x: center;
-}
-.key_d {
-  background-position-y: -600px;
-  width: 51px;
-  background-position-x: center;
-}
-.key_v {
-  background-position-y: -650px;
-  width: 51px;
-  background-position-x: center;
-}
-.key_x {
-  background-position-y: -700px;
-  width: 51px;
-  background-position-x: center;
-}
-.key_y {
-  background-position-y: -750px;
-  width: 51px;
-  background-position-x: center;
-}
-.key_z {
-  background-position-y: -800px;
-  width: 51px;
-  background-position-x: center;
-}
-.key_esc {
-  background-position-y: -250px;
-  width: 60px;
-}
-.key_tab {
-  background-position-y: -300px;
-  width: 80px;
-}
-.key_delete {
-  background-position-y: -350px;
-  width: 90px;
-}
-.key_return {
-  background-position-y: -400px;
-  width: 100px;
-}
-.key_f2 {
-  background-position-y: -450px;
-  width: 60px;
-}
-.key_shift {
-  margin-right: -10px;
-  width: 120px;
-  background: -webkit-linear-gradient(0, #333333 40%, #ffffff 90%);
-}
-.key_shift:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 1px;
-  bottom: 1px;
-  left: 1px;
-  right: 1px;
-  border-radius: 5px;
-  background-color: #ffffff;
   background-image: url('img/keys.svg');
-  background-repeat: no-repeat;
-  background-position-y: -1px;
 }
-.key_ctrl {
-  margin-right: -10px;
-  width: 100px;
-  background: -webkit-linear-gradient(0, #333333 40%, #ffffff 90%);
+.key.key_small {
+  width: 31px;
 }
-.key_ctrl:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 1px;
-  bottom: 1px;
-  left: 1px;
-  right: 1px;
-  border-radius: 5px;
-  background-color: #ffffff;
-  background-image: url('img/keys.svg');
-  background-repeat: no-repeat;
-  background-position-y: -51px;
+.key_small {
+  height: 30px;
 }
-html.mac .key_ctrl {
-  width: 130px;
+.key_small {
+  background-image: url('img/keys-small.svg');
 }
-html.mac .key_ctrl:before {
-  background-position-y: -101px;
-}
+.key_shift,
+.key_ctrl,
 .key_alt {
   margin-right: -10px;
-  width: 100px;
   background: -webkit-linear-gradient(0, #333333 40%, #ffffff 90%);
 }
+.key_shift:before,
+.key_ctrl:before,
 .key_alt:before {
   content: '';
   display: block;
@@ -143,11 +58,115 @@ html.mac .key_ctrl:before {
   background-color: #ffffff;
   background-image: url('img/keys.svg');
   background-repeat: no-repeat;
-  background-position-y: -151px;
+}
+.key_shift.key_small:before,
+.key_ctrl.key_small:before,
+.key_alt.key_small:before {
+  background-image: url('img/keys-small.svg');
+}
+.key_a {
+  background-position-y: -500px;
+}
+.key_c {
+  background-position-y: -550px;
+}
+.key_d {
+  background-position-y: -600px;
+}
+.key_v {
+  background-position-y: -650px;
+}
+.key_x {
+  background-position-y: -700px;
+}
+.key_y {
+  background-position-y: -750px;
+}
+.key_z {
+  background-position-y: -800px;
+}
+.key_esc {
+  background-position-x: left;
+  background-position-y: -250px;
+  width: 60px;
+}
+.key_esc.key_small {
+  width: 45px;
+}
+.key_tab {
+  background-position-x: left;
+  background-position-y: -300px;
+  width: 80px;
+}
+.key_tab.key_small {
+  width: 60px;
+}
+.key_delete {
+  background-position-x: left;
+  background-position-y: -350px;
+  width: 90px;
+}
+.key_delete.key_small {
+  width: 67.5px;
+}
+.key_return {
+  background-position-x: left;
+  background-position-y: -400px;
+  width: 100px;
+}
+.key_return.key_small {
+  width: 75px;
+}
+.key_f2 {
+  background-position-x: left;
+  background-position-y: -450px;
+  width: 60px;
+}
+.key_f2.key_small {
+  width: 45px;
+}
+.key_shift {
+  width: 85px;
+}
+.key_shift.key_small {
+  width: 63.75px;
+}
+.key_shift:before {
+  background-position-y: 0px;
+}
+.key_ctrl {
+  width: 100px;
+}
+.key_ctrl.key_small {
+  width: 75px;
+}
+.key_ctrl:before {
+  background-position-y: -50px;
+}
+html.mac .key_ctrl {
+  width: 130px;
+}
+html.mac .key_ctrl.key_small {
+  width: 97.5px;
+}
+html.mac .key_ctrl:before {
+  background-position-y: -100px;
+}
+.key_alt {
+  width: 100px;
+}
+.key_alt.key_small {
+  width: 75px;
+}
+.key_alt:before {
+  background-position-y: -150px;
 }
 html.mac .key_alt {
   width: 130px;
 }
+html.mac .key_alt.key_small {
+  width: 97.5px;
+}
 html.mac .key_alt:before {
-  background-position-y: -201px;
+  background-position-y: -200px;
 }
