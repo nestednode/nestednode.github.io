@@ -29,15 +29,6 @@ html {
   background-position-x: center;
   background-image: url('img/keys.svg');
 }
-.key.key_small {
-  width: 31px;
-}
-.key_small {
-  height: 30px;
-}
-.key_small {
-  background-image: url('img/keys-small.svg');
-}
 .key_shift,
 .key_ctrl,
 .key_alt {
@@ -58,11 +49,6 @@ html {
   background-color: #e4e4e4;
   background-image: url('img/keys.svg');
   background-repeat: no-repeat;
-}
-.key_shift.key_small:before,
-.key_ctrl.key_small:before,
-.key_alt.key_small:before {
-  background-image: url('img/keys-small.svg');
 }
 .key_top {
   background-position-y: -500px;
@@ -111,46 +97,28 @@ html {
   background-position-y: -250px;
   background-position-x: left;
 }
-.key_esc.key_small {
-  width: 35.7px;
-}
 .key_tab {
   width: 80px;
   background-position-y: -300px;
   background-position-x: left;
-}
-.key_tab.key_small {
-  width: 56px;
 }
 .key_delete {
   width: 80px;
   background-position-y: -350px;
   background-position-x: left;
 }
-.key_delete.key_small {
-  width: 56px;
-}
 .key_return {
   width: 100px;
   background-position-y: -400px;
   background-position-x: left;
-}
-.key_return.key_small {
-  width: 70px;
 }
 .key_f2 {
   width: 51px;
   background-position-y: -450px;
   background-position-x: left;
 }
-.key_f2.key_small {
-  width: 35.7px;
-}
 .key_shift {
   width: 110px;
-}
-.key_shift.key_small {
-  width: 77px;
 }
 .key_shift:before {
   background-position-y: 0px;
@@ -158,17 +126,11 @@ html {
 .key_ctrl {
   width: 100px;
 }
-.key_ctrl.key_small {
-  width: 70px;
-}
 .key_ctrl:before {
   background-position-y: -50px;
 }
 html.mac .key_ctrl {
   width: 130px;
-}
-html.mac .key_ctrl.key_small {
-  width: 91px;
 }
 html.mac .key_ctrl:before {
   background-position-y: -100px;
@@ -176,17 +138,11 @@ html.mac .key_ctrl:before {
 .key_alt {
   width: 70px;
 }
-.key_alt.key_small {
-  width: 49px;
-}
 .key_alt:before {
   background-position-y: -150px;
 }
 html.mac .key_alt {
   width: 96px;
-}
-html.mac .key_alt.key_small {
-  width: 67.2px;
 }
 html.mac .key_alt:before {
   background-position-y: -200px;

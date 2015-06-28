@@ -38,19 +38,13 @@ body {
     display: inline-block;
     position: relative;
     border-radius: @radius;
-    .width(51px, 31px);
-    height: 49px; &_small { height: 30px }
+    width: 51px;
+    height: 49px;
     background-color: @bg;
     background-repeat: no-repeat;
     background-position-x: center;
-    background-image: url('img/keys.svg'); &_small { background-image: url('img/keys-small.svg') }
+    background-image: url('img/keys.svg');
 
-    .width(@w-normal, @w-small: @w-normal * 0.7) {
-        width: @w-normal;
-        &.key_small {
-            width: @w-small;
-        }
-    }
     .sprite-pos(@n) {
         background-position-y: @n * -50px;
     }
@@ -72,7 +66,6 @@ body {
             background-image: url('img/keys.svg');
             background-repeat: no-repeat;
         }
-        &.key_small:before { background-image: url('img/keys-small.svg') }
     }
 
     .arrow-key(@n) {
@@ -110,7 +103,7 @@ body {
     &_z { .letter-key(7) }
 
     .func-key(@n, @width) {
-        .width(@width);
+        width: @width;
         .sprite-pos(4 + @n);
         background-position-x: left;
     }
@@ -121,7 +114,7 @@ body {
     &_f2     { .func-key(5, 51px) }
 
     .mod-key(@n, @width) {
-        .width(@width);
+        width: @width;
         &:before { .sprite-pos(@n) };
     }
     &_shift {
