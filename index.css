@@ -4,8 +4,8 @@ html {
 .keymap {
   margin: 0 auto;
   max-width: 800px;
-  background: #fff;
-  border-spacing: 25px 10px;
+  background: #e4e4e4;
+  border-spacing: 35px 20px;
 }
 .keymap__shortcut {
   text-align: right;
@@ -13,7 +13,7 @@ html {
   white-space: nowrap;
 }
 .keymap__descr {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Georgia, 'Times New Roman', sans-serif;
   font-size: 19px;
   line-height: 1.6;
   vertical-align: middle;
@@ -21,7 +21,7 @@ html {
 .key {
   display: inline-block;
   position: relative;
-  border-radius: 5px;
+  border-radius: 4px;
   width: 51px;
   height: 49px;
   background-color: #333333;
@@ -41,8 +41,8 @@ html {
 .key_shift,
 .key_ctrl,
 .key_alt {
-  margin-right: -10px;
-  background: -webkit-linear-gradient(0, #333333 40%, #ffffff 90%);
+  margin-right: -8px;
+  background: -webkit-linear-gradient(0, #333333 40%, #e4e4e4 90%);
 }
 .key_shift:before,
 .key_ctrl:before,
@@ -54,8 +54,8 @@ html {
   bottom: 1px;
   left: 1px;
   right: 1px;
-  border-radius: 5px;
-  background-color: #ffffff;
+  border-radius: 4px;
+  background-color: #e4e4e4;
   background-image: url('img/keys.svg');
   background-repeat: no-repeat;
 }
@@ -64,72 +64,93 @@ html {
 .key_alt.key_small:before {
   background-image: url('img/keys-small.svg');
 }
-.key_a {
+.key_top {
   background-position-y: -500px;
+  height: 24px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 1px;
 }
-.key_c {
+.key_right {
   background-position-y: -550px;
+  height: 24px;
 }
-.key_d {
+.key_bottom {
   background-position-y: -600px;
+  height: 24px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
-.key_v {
+.key_left {
   background-position-y: -650px;
+  height: 24px;
 }
-.key_x {
+.key_a {
   background-position-y: -700px;
 }
-.key_y {
+.key_c {
   background-position-y: -750px;
 }
-.key_z {
+.key_d {
   background-position-y: -800px;
 }
+.key_v {
+  background-position-y: -850px;
+}
+.key_x {
+  background-position-y: -900px;
+}
+.key_y {
+  background-position-y: -950px;
+}
+.key_z {
+  background-position-y: -1000px;
+}
 .key_esc {
-  background-position-x: left;
+  width: 51px;
   background-position-y: -250px;
-  width: 60px;
+  background-position-x: left;
 }
 .key_esc.key_small {
-  width: 45px;
+  width: 35.7px;
 }
 .key_tab {
-  background-position-x: left;
-  background-position-y: -300px;
   width: 80px;
+  background-position-y: -300px;
+  background-position-x: left;
 }
 .key_tab.key_small {
-  width: 60px;
+  width: 56px;
 }
 .key_delete {
-  background-position-x: left;
+  width: 80px;
   background-position-y: -350px;
-  width: 90px;
+  background-position-x: left;
 }
 .key_delete.key_small {
-  width: 67.5px;
+  width: 56px;
 }
 .key_return {
-  background-position-x: left;
-  background-position-y: -400px;
   width: 100px;
+  background-position-y: -400px;
+  background-position-x: left;
 }
 .key_return.key_small {
-  width: 75px;
+  width: 70px;
 }
 .key_f2 {
-  background-position-x: left;
+  width: 51px;
   background-position-y: -450px;
-  width: 60px;
+  background-position-x: left;
 }
 .key_f2.key_small {
-  width: 45px;
+  width: 35.7px;
 }
 .key_shift {
-  width: 85px;
+  width: 110px;
 }
 .key_shift.key_small {
-  width: 63.75px;
+  width: 77px;
 }
 .key_shift:before {
   background-position-y: 0px;
@@ -138,7 +159,7 @@ html {
   width: 100px;
 }
 .key_ctrl.key_small {
-  width: 75px;
+  width: 70px;
 }
 .key_ctrl:before {
   background-position-y: -50px;
@@ -147,26 +168,44 @@ html.mac .key_ctrl {
   width: 130px;
 }
 html.mac .key_ctrl.key_small {
-  width: 97.5px;
+  width: 91px;
 }
 html.mac .key_ctrl:before {
   background-position-y: -100px;
 }
 .key_alt {
-  width: 100px;
+  width: 70px;
 }
 .key_alt.key_small {
-  width: 75px;
+  width: 49px;
 }
 .key_alt:before {
   background-position-y: -150px;
 }
 html.mac .key_alt {
-  width: 130px;
+  width: 96px;
 }
 html.mac .key_alt.key_small {
-  width: 97.5px;
+  width: 67.2px;
 }
 html.mac .key_alt:before {
   background-position-y: -200px;
+}
+.arrow-box {
+  display: inline-block;
+  line-height: 0;
+}
+.arrow-box_middle {
+  margin: 0 5px;
+}
+.sub-descr {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 15px;
+}
+.sub-descr__item {
+  display: inline-block;
+  text-align: center;
+  font-size: 13px;
+  margin: 0 5px;
 }
