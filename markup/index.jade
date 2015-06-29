@@ -1,9 +1,9 @@
-mixin keymap-item(shortcut)
-    tr
-        td.keymap__shortcut
+mixin keymap__entry(shortcut, sub)
+    .keymap__entry(class = sub ? 'keymap__entry_sub' : '')
+        .keymap__shortcut
             each key in shortcut
                 .key(class = 'key_' + key)
-        td.keymap__descr
+        .keymap__descr
             block
 
 
@@ -13,80 +13,81 @@ html.mac
         meta(charset='utf-8')
         link(rel='stylesheet' href='index.css')
     body
-        .content
-            table.keymap
-                tr
-                    td.keymap__shortcut
-                        .arrow-box
-                            .key.key_left
-                        .arrow-box.arrow-box_middle
-                            .key.key_top
+        .keymap
+
+            .keymap__entry
+                .keymap__shortcut
+                    .arrow-box
+                        .key.key_left
+                    .arrow-box.arrow-box_middle
+                        .key.key_top
+                        br
+                        .key.key_bottom
+                    .arrow-box
+                        .key.key_right
+                .keymap__descr выбрать узел:
+                    .sub-descr
+                        .sub-descr__item родительский
+                        .sub-descr__item
+                            | предыдущий
                             br
-                            .key.key_bottom
-                        .arrow-box
-                            .key.key_right
-                    td.keymap__descr выбрать узел:
-                        .sub-descr
-                            .sub-descr__item родительский
-                            .sub-descr__item
-                                | предыдущий
-                                br
-                                | следующий
-                            .sub-descr__item вложенный
+                            | следующий
+                        .sub-descr__item вложенный
 
-                tr
-                    td.keymap__shortcut
-                        .key.key_shift
-                        .arrow-box
-                            .key.key_top
+            .keymap__entry
+                .keymap__shortcut
+                    .key.key_shift
+                    .arrow-box
+                        .key.key_top
+                        br
+                        .key.key_bottom
+                .keymap__descr
+                    | добавить к выделенному
+                    .sub-descr
+                        .sub-descr__item
+                            | предыдущий
                             br
-                            .key.key_bottom
-                    td.keymap__descr
-                        | добавить к выделенному
-                        .sub-descr
-                            .sub-descr__item
-                                | предыдущий
-                                br
-                                | следующий
-                        | узел
+                            | следующий
+                    | узел
 
-                +keymap-item(['ctrl', 'a']) выделить все узлы одного родителя
+            +keymap__entry(['ctrl', 'a']) выделить все узлы одного родителя
 
 
-                +keymap-item(['tab']) добавить внутрь
-                +keymap-item(['shift', 'tab']) добавить во вне
+            +keymap__entry(['tab']) добавить внутрь
+            +keymap__entry(['shift', 'tab']) добавить во вне
 
-                +keymap-item(['return']) добавить после
-                +keymap-item(['shift', 'return']) добавить перед
+            +keymap__entry(['return']) добавить после
+            +keymap__entry(['shift', 'return']) добавить перед
 
-                +keymap-item(['ctrl', 'd']) дублировать
+            +keymap__entry(['ctrl', 'd']) дублировать
 
-                tr
-                    td.keymap__shortcut
-                        .key.key_alt
-                        .arrow-box
-                            .key.key_top
+            .keymap__entry
+                .keymap__shortcut
+                    .key.key_alt
+                    .arrow-box
+                        .key.key_top
+                        br
+                        .key.key_bottom
+                .keymap__descr
+                    | переместить на
+                    .sub-descr
+                        .sub-descr__item
+                            | предыдущую
                             br
-                            .key.key_bottom
-                    td.keymap__descr
-                        | переместить на
-                        .sub-descr
-                            .sub-descr__item
-                                | предыдущую
-                                br
-                                | следующую
-                        | позицию
+                            | следующую
+                    | позицию
 
-                +keymap-item(['delete']) удалить
+            +keymap__entry(['delete']) удалить
 
-                +keymap-item(['f2']) редактировать
-                +keymap-item(['esc']) отменить редактирование
+            +keymap__entry(['f2']) редактировать
+            +keymap__entry(['esc'], 1) отменить редактирование
+            +keymap__entry(['return'], 1) закончить редактирование
 
 
 
-                +keymap-item(['ctrl', 'c']) копировать
-                +keymap-item(['ctrl', 'x']) вырезать
-                +keymap-item(['ctrl', 'v']) вставить
+            +keymap__entry(['ctrl', 'c']) копировать
+            +keymap__entry(['ctrl', 'x']) вырезать
+            +keymap__entry(['ctrl', 'v']) вставить
 
-                +keymap-item(['ctrl', 'z']) отменить
-                +keymap-item(['ctrl', 'y']) вернуть
+            +keymap__entry(['ctrl', 'z']) отменить
+            +keymap__entry(['ctrl', 'y']) вернуть

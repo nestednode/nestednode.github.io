@@ -3,16 +3,32 @@ html {
 }
 .keymap {
   margin: 0 auto;
+  box-sizing: border-box;
   max-width: 800px;
+  padding: 20px;
+  padding-bottom: 0;
   background: #e4e4e4;
-  border-spacing: 35px 20px;
+}
+.keymap__entry {
+  line-height: 0;
+  padding-bottom: 20px;
+}
+.keymap__entry_sub {
+  margin-left: 240px;
 }
 .keymap__shortcut {
+  display: inline-block;
+  margin-right: 35px;
+  min-width: 205px;
   text-align: right;
-  vertical-align: top;
+  vertical-align: middle;
   white-space: nowrap;
 }
+.keymap__entry_sub > .keymap__shortcut {
+  min-width: unset;
+}
 .keymap__descr {
+  display: inline-block;
   font-family: Georgia, 'Times New Roman', sans-serif;
   font-size: 19px;
   line-height: 1.6;

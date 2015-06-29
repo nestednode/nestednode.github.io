@@ -8,19 +8,41 @@ body {
 @main-bg: #e4e4e4;
 
 .keymap {
-    margin: 0 auto;
-    max-width: 800px;
-    background: @main-bg;
-    border-spacing: 35px 20px;
 
+    @shortcut-min-width: 205px;
+    @shortcut-margin-right: 35px;
+
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 800px;
+    padding: 20px;
+    padding-bottom: 0;
+    background: @main-bg;
+
+    &__entry {
+        line-height: 0;
+        padding-bottom: 20px;
+
+        &_sub {
+            margin-left: @shortcut-min-width + @shortcut-margin-right;
+        }
+    }
 
     &__shortcut {
+        display: inline-block;
+        margin-right: @shortcut-margin-right;
+        min-width: @shortcut-min-width;
         text-align: right;
-        vertical-align: top;
+        vertical-align: middle;
         white-space: nowrap;
+
+        .keymap__entry_sub > & {
+            min-width: unset;
+        }
     }
 
     &__descr {
+        display: inline-block;
         font-family: Georgia, 'Times New Roman', sans-serif;
         font-size: 19px;
         line-height: 1.6;
