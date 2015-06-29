@@ -5,13 +5,12 @@ html {
   margin: 0 auto;
   box-sizing: border-box;
   max-width: 801px;
-  padding: 25px 20px;
-  padding-bottom: 0;
+  padding: 10px 20px;
   background: #e4e4e4;
 }
 .keymap__entry {
   line-height: 0;
-  padding-bottom: 25px;
+  margin: 20px 0;
 }
 .keymap__entry_sub {
   margin-left: 240px;
@@ -27,6 +26,13 @@ html {
 .keymap__entry_sub > .keymap__shortcut {
   min-width: unset;
 }
+.keymap__shortcut-box {
+  display: inline-block;
+  line-height: 0;
+}
+.keymap__shortcut-box_with-margin {
+  margin: 0 5px;
+}
 .keymap__descr {
   display: inline-block;
   font-family: Georgia, 'Times New Roman', sans-serif;
@@ -34,11 +40,22 @@ html {
   line-height: 1.6;
   vertical-align: middle;
 }
+.keymap__sub-descr {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 15px;
+}
+.keymap__sub-descr-item {
+  display: inline-block;
+  text-align: center;
+  font-size: 13px;
+  margin: 0 5px;
+}
 .keymap__separator {
+  margin: 30px 0;
   border-top: 1px dotted #aaa;
   height: 1px;
   border-bottom: 1px dotted #aaa;
-  margin-bottom: 25px;
 }
 .key {
   display: inline-block;
@@ -168,22 +185,4 @@ html.mac .key_alt {
 }
 html.mac .key_alt:before {
   background-position-y: -200px;
-}
-.arrow-box {
-  display: inline-block;
-  line-height: 0;
-}
-.arrow-box_middle {
-  margin: 0 5px;
-}
-.sub-descr {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 15px;
-}
-.sub-descr__item {
-  display: inline-block;
-  text-align: center;
-  font-size: 13px;
-  margin: 0 5px;
 }

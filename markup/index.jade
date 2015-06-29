@@ -17,34 +17,34 @@ html.mac
 
             .keymap__entry
                 .keymap__shortcut
-                    .arrow-box
+                    .keymap__shortcut-box
                         .key.key_left
-                    .arrow-box.arrow-box_middle
+                    .keymap__shortcut-box.keymap__shortcut-box_with-margin
                         .key.key_top
                         br
                         .key.key_bottom
-                    .arrow-box
+                    .keymap__shortcut-box
                         .key.key_right
                 .keymap__descr выбрать узел:
-                    .sub-descr
-                        .sub-descr__item родительский
-                        .sub-descr__item
+                    .keymap__sub-descr
+                        .keymap__sub-descr-item родительский
+                        .keymap__sub-descr-item
                             | предыдущий
                             br
                             | следующий
-                        .sub-descr__item вложенный
+                        .keymap__sub-descr-item вложенный
 
             .keymap__entry
                 .keymap__shortcut
                     .key.key_shift
-                    .arrow-box
+                    .keymap__shortcut-box
                         .key.key_top
                         br
                         .key.key_bottom
                 .keymap__descr
                     | добавить к выделенному
-                    .sub-descr
-                        .sub-descr__item
+                    .keymap__sub-descr
+                        .keymap__sub-descr-item
                             | предыдущий
                             br
                             | следующий
@@ -71,14 +71,14 @@ html.mac
             .keymap__entry
                 .keymap__shortcut
                     .key.key_alt
-                    .arrow-box
+                    .keymap__shortcut-box
                         .key.key_top
                         br
                         .key.key_bottom
                 .keymap__descr
                     | переместить на
-                    .sub-descr
-                        .sub-descr__item
+                    .keymap__sub-descr
+                        .keymap__sub-descr-item
                             | предыдущую
                             br
                             | следующую
