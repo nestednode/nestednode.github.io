@@ -9,19 +9,22 @@ body {
 
 .keymap {
 
+    @padding-vertical: 25px;
+    @padding-horizontal: 20px;
     @shortcut-min-width: 205px;
     @shortcut-margin-right: 35px;
 
+
     margin: 0 auto;
     box-sizing: border-box;
-    max-width: 800px;
-    padding: 20px;
+    max-width: 801px;
+    padding: @padding-vertical @padding-horizontal;
     padding-bottom: 0;
     background: @main-bg;
 
     &__entry {
         line-height: 0;
-        padding-bottom: 20px;
+        padding-bottom: @padding-vertical;
 
         &_sub {
             margin-left: @shortcut-min-width + @shortcut-margin-right;
@@ -47,6 +50,13 @@ body {
         font-size: 19px;
         line-height: 1.6;
         vertical-align: middle;
+    }
+
+    &__separator {
+        border-top: 1px dotted #aaa;
+        height: 1px;
+        border-bottom: 1px dotted #aaa;
+        margin-bottom: @padding-vertical;
     }
 
 }

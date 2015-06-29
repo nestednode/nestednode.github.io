@@ -4,14 +4,14 @@ html {
 .keymap {
   margin: 0 auto;
   box-sizing: border-box;
-  max-width: 800px;
-  padding: 20px;
+  max-width: 801px;
+  padding: 25px 20px;
   padding-bottom: 0;
   background: #e4e4e4;
 }
 .keymap__entry {
   line-height: 0;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
 }
 .keymap__entry_sub {
   margin-left: 240px;
@@ -33,6 +33,12 @@ html {
   font-size: 19px;
   line-height: 1.6;
   vertical-align: middle;
+}
+.keymap__separator {
+  border-top: 1px dotted #aaa;
+  height: 1px;
+  border-bottom: 1px dotted #aaa;
+  margin-bottom: 25px;
 }
 .key {
   display: inline-block;

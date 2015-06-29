@@ -52,6 +52,7 @@ html.mac
 
             +keymap__entry(['ctrl', 'a']) выделить все узлы одного родителя
 
+            .keymap__separator
 
             +keymap__entry(['tab']) добавить внутрь
             +keymap__entry(['shift', 'tab']) добавить во вне
@@ -59,7 +60,13 @@ html.mac
             +keymap__entry(['return']) добавить после
             +keymap__entry(['shift', 'return']) добавить перед
 
-            +keymap__entry(['ctrl', 'd']) дублировать
+            .keymap__separator
+
+            +keymap__entry(['f2']) редактировать
+            +keymap__entry(['esc'], 1) отменить редактирование
+            +keymap__entry(['return'], 1) завершить редактирование
+
+            .keymap__separator
 
             .keymap__entry
                 .keymap__shortcut
@@ -77,17 +84,17 @@ html.mac
                             | следующую
                     | позицию
 
+            +keymap__entry(['ctrl', 'd']) дублировать
+
             +keymap__entry(['delete']) удалить
 
-            +keymap__entry(['f2']) редактировать
-            +keymap__entry(['esc'], 1) отменить редактирование
-            +keymap__entry(['return'], 1) закончить редактирование
-
-
+            .keymap__separator
 
             +keymap__entry(['ctrl', 'c']) копировать
             +keymap__entry(['ctrl', 'x']) вырезать
             +keymap__entry(['ctrl', 'v']) вставить
+
+            .keymap__separator
 
             +keymap__entry(['ctrl', 'z']) отменить
             +keymap__entry(['ctrl', 'y']) вернуть
