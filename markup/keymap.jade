@@ -1,0 +1,94 @@
+mixin keymap__entry(shortcut, sub)
+    .keymap__entry(class = sub ? 'keymap__entry_sub' : '')
+        .keymap__shortcut
+            each key in shortcut
+                .key(class = 'key_' + key)
+        .keymap__descr
+            block
+
+
+.keymap
+
+    .keymap__entry
+        .keymap__shortcut
+            .keymap__shortcut-box
+                .key.key_left
+            .keymap__shortcut-box.keymap__shortcut-box_with-margin
+                .key.key_top
+                br
+                .key.key_bottom
+            .keymap__shortcut-box
+                .key.key_right
+        .keymap__descr выбрать узел:
+            .keymap__sub-descr
+                .keymap__sub-descr-item родительский
+                .keymap__sub-descr-item
+                    | предыдущий
+                    br
+                    | следующий
+                .keymap__sub-descr-item вложенный
+
+    .keymap__entry
+        .keymap__shortcut
+            .key.key_shift
+            .keymap__shortcut-box
+                .key.key_top
+                br
+                .key.key_bottom
+        .keymap__descr
+            | добавить к выделенному
+            .keymap__sub-descr
+                .keymap__sub-descr-item
+                    | предыдущий
+                    br
+                    | следующий
+            | узел
+
+    +keymap__entry(['ctrl', 'a']) выделить все узлы одного родителя
+
+    .keymap__separator
+
+    +keymap__entry(['tab']) добавить внутрь
+    +keymap__entry(['shift', 'tab']) добавить во вне
+
+    +keymap__entry(['return']) добавить после
+    +keymap__entry(['shift', 'return']) добавить перед
+
+    .keymap__separator
+
+    +keymap__entry(['f2']) редактировать
+    +keymap__entry(['esc'], 1) отменить редактирование
+    +keymap__entry(['return'], 1) завершить редактирование
+
+    .keymap__separator
+
+    .keymap__entry
+        .keymap__shortcut
+            .key.key_alt
+            .keymap__shortcut-box
+                .key.key_top
+                br
+                .key.key_bottom
+        .keymap__descr
+            | переместить на
+            .keymap__sub-descr
+                .keymap__sub-descr-item
+                    | предыдущую
+                    br
+                    | следующую
+            | позицию
+
+    +keymap__entry(['ctrl', 'd']) дублировать
+
+    +keymap__entry(['delete']) удалить
+
+    .keymap__separator
+
+    +keymap__entry(['ctrl', 'c']) копировать
+    +keymap__entry(['ctrl', 'x']) вырезать
+    +keymap__entry(['ctrl', 'v']) вставить
+
+    .keymap__separator
+
+    +keymap__entry(['ctrl', 'z']) отменить
+    +keymap__entry(['ctrl', 'y']) вернуть

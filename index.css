@@ -1,10 +1,10 @@
-html {
+body {
   margin: 0;
 }
 .keymap {
   margin: 0 auto;
   box-sizing: border-box;
-  max-width: 801px;
+  min-width: 700px;
   padding: 10px 20px;
   background: #e4e4e4;
 }

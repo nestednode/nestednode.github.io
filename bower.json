@@ -1,0 +1,9 @@
+{
+  "name": "NNSite",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "NestedTextEditor": "../NestedTextEditor",
+    "requirejs": "~2.1.18"
+  }
+}
