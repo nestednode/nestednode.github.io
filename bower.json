@@ -1,9 +1,8 @@
 {
-  "name": "NNSite",
+  "name": "nn-site",
   "version": "0.0.1",
-  "private": true,
   "dependencies": {
-    "NestedTextEditor": "../NestedTextEditor",
+    "nn-nested-text": "../nn-nested-text",
     "requirejs": "~2.1.18"
   }
 }

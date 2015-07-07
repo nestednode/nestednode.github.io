@@ -1,4 +1,4 @@
-define(['pkg/NestedTextEditor/lib/NestedTextEditor'], function(NestedTextEditor) {
+define(['bower_components/nn-nested-text/lib/NestedText'], function(NestedText) {
 
     function node(text, nested) {
         return { data: { text: text }, nested: nested ? nested : [] };
@@ -21,8 +21,14 @@ define(['pkg/NestedTextEditor/lib/NestedTextEditor'], function(NestedTextEditor)
         ])
     ]);
 
-    NestedTextEditor.init(docData, document.getElementById('demo'), { theme: 'dark', zoom: 200 });
+    var nestedTextDoc = NestedText.createDocument(docData);
+    var container = document.getElementById('demo');
+    var styleMods = { theme: 'dark', zoom: 200, compact: true };
+    var render = NestedText.renderToContainer.bind(undefined, container, styleMods);
 
-    // todo platform check
+    nestedTextDoc.addListener('change', render);
+    render(nestedTextDoc);
+
+    // todo resolve platform for keymap
 
 });
