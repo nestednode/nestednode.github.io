@@ -2,37 +2,66 @@
 
 .keymap {
 
-    @shortcut-min-width: 205px;
-    @shortcut-margin-right: 35px;
-    @entry-margin-vertical: 20px;
-
-
-    margin: 0 auto;
-    box-sizing: border-box;
-    min-width: 700px;
-    padding: 10px 20px;
+    display: inline-block;
     background: @keymap-bg;
+    box-sizing: border-box;
+    padding-right: 40px;
+    white-space: nowrap;
+
+    &__column {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    &__entry-group {
+        margin: 40px 0;
+
+        &_compact {
+            margin: -5px 0 0;
+        }
+    }
 
     &__entry {
         line-height: 0;
-        margin: @entry-margin-vertical 0;
+        margin: 20px 0;
 
-        &_sub {
-            margin-left: @shortcut-min-width + @shortcut-margin-right;
+        &:first-child {
+            margin-top: 0;
         }
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &_inline {
+            display: inline-block;
+        }
+
+        &_compact {
+            display: inline-block;
+            text-align: right;
+            margin: 7px 0;
+        }
+    }
+
+    &__sub-entry-box {
+        display: inline-block;
+        margin-left: 30px;
+        vertical-align: middle;
     }
 
     &__shortcut {
         display: inline-block;
-        margin-right: @shortcut-margin-right;
-        min-width: @shortcut-min-width;
+        margin-right: 25px;
+        min-width: 205px;
         text-align: right;
         vertical-align: middle;
         white-space: nowrap;
-
-        .keymap__entry_sub > & {
-            min-width: unset;
-        }
+    }
+    .keymap__entry_compact &__shortcut {
+        margin-right: 0;
+    }
+    .keymap__sub-entry-box &__shortcut {
+        min-width: unset;
     }
 
     &__shortcut-box {
@@ -46,16 +75,22 @@
 
     &__descr {
         display: inline-block;
-        font-family: Georgia, 'Times New Roman', sans-serif;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 300;
         font-size: 19px;
         line-height: 1.6;
         vertical-align: middle;
+    }
+    .keymap__entry_compact &__descr {
+        font-size: 13px;
+        margin-top: 2px;
+        margin-right: 4px;
     }
 
     &__sub-descr {
         display: inline-block;
         vertical-align: middle;
-        margin: 0 15px;
+        margin: -5px 10px;
     }
 
     &__sub-descr-item {
@@ -65,28 +100,19 @@
         margin: 0 5px;
     }
 
-
-
-    &__separator {
-        margin: (@entry-margin-vertical + 10px) 0;
-        border-top: 1px dotted #aaa;
-        height: 1px;
-        border-bottom: 1px dotted #aaa;
-    }
-
 }
 
 
 .key {
     @bg: #333;
     @bg-mod-key: @keymap-bg;
-    @radius: 4px;
+    @radius: 3px;
 
     display: inline-block;
     position: relative;
     border-radius: @radius;
-    width: 51px;
-    height: 49px;
+    width: 36px;
+    height: 33px;
     background-color: @bg;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -117,7 +143,7 @@
 
     .arrow-key(@n) {
         .sprite-pos(9 + @n);
-        height: 24px;
+        height: 16px;
 
     }
     &_top {
@@ -154,26 +180,26 @@
         .sprite-pos(4 + @n);
         background-position-x: left;
     }
-    &_esc    { .func-key(1, 51px) }
-    &_tab    { .func-key(2, 80px) }
-    &_delete { .func-key(3, 80px) }
-    &_return { .func-key(4, 100px) }
-    &_f2     { .func-key(5, 51px) }
+    &_esc    { .func-key(1, 37px) }
+    &_tab    { .func-key(2, 60px) }
+    &_delete { .func-key(3, 67px) }
+    &_return { .func-key(4, 79px) }
+    &_space  { .func-key(5, 168px) }
 
     .mod-key(@n, @width) {
         width: @width;
         &:before { .sprite-pos(@n) };
     }
     &_shift {
-        .mod-key(0, 110px)
+        .mod-key(0, 95px)
     }
     &_ctrl {
-        .mod-key(1, 100px);
-        html.mac & { .mod-key(2, 130px) }
+        .mod-key(1, 80px);
+        html.mac & { .mod-key(2, 95px) }
     }
     &_alt {
         .mod-key(3, 70px);
-        html.mac & { .mod-key(4, 96px) }
+        html.mac & { .mod-key(4, 70px) }
     }
 }
 

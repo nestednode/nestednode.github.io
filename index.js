@@ -23,7 +23,7 @@ define(['bower_components/nn-nested-text/lib/NestedText'], function(NestedText) 
 
     var nestedTextDoc = NestedText.createDocument(docData);
     var container = document.getElementById('demo');
-    var styleMods = { theme: 'dark', zoom: 200, compact: true };
+    var styleMods = { compact: true, size: '14', theme: 'dark'};
     var render = NestedText.renderToContainer.bind(undefined, container, styleMods);
 
     nestedTextDoc.addListener('change', render);
