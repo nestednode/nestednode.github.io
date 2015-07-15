@@ -1,4 +1,7 @@
-define(['bower_components/nn-nested-text/lib/NestedText'], function(NestedText) {
+define([
+    'bower_components/nn-nested-text/lib/NestedText',
+    'bower_components/require-css/css!bower_components/nn-nested-node/lib/NestedNodeStyle/NestedNodeStyle'
+], function(NestedText) {
 
     function node(text, nested) {
         return { data: { text: text }, nested: nested ? nested : [] };
@@ -22,12 +25,16 @@ define(['bower_components/nn-nested-text/lib/NestedText'], function(NestedText) 
     ]);
 
     var nestedTextDoc = NestedText.createDocument(docData);
-    var container = document.getElementById('demo');
-    var styleMods = { compact: true, size: '14', theme: 'dark'};
-    var render = NestedText.renderToContainer.bind(undefined, container, styleMods);
+    var editorBox = document.querySelector('.demo__editor-box');
+    var styleMods = { size: '14', theme: 'dark'};
+    var render = NestedText.renderToContainer.bind(undefined, editorBox, styleMods);
 
     nestedTextDoc.addListener('change', render);
     render(nestedTextDoc);
+
+    editorBox.parentElement.addEventListener('click', function(e) {
+        editorBox.firstElementChild.focus();
+    });
 
     // todo resolve platform for keymap
 

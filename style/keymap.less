@@ -115,16 +115,15 @@
     height: 33px;
     background-color: @bg;
     background-repeat: no-repeat;
-    background-position-x: center;
     background-image: url('img/keys.svg');
 
-    .sprite-pos(@n) {
-        background-position-y: @n * -50px;
+    .sprite-pos(@n; @pos-x: left) {
+        background-position: @pos-x (@n * -50px);
     }
 
     &_shift, &_ctrl, &_alt {
         margin-right: -@radius * 2;
-        background: -webkit-linear-gradient(0, @bg 40%, @bg-mod-key 90%);
+        background: linear-gradient(90deg, @bg 40%, @bg-mod-key 90%);
 
         &:before {
             content: '';
@@ -142,7 +141,7 @@
     }
 
     .arrow-key(@n) {
-        .sprite-pos(9 + @n);
+        .sprite-pos(9 + @n; center);
         height: 16px;
 
     }
@@ -165,7 +164,7 @@
     }
 
     .letter-key(@n) {
-        .sprite-pos(13 + @n);
+        .sprite-pos(13 + @n; center);
     }
     &_a { .letter-key(1) }
     &_c { .letter-key(2) }
@@ -178,7 +177,6 @@
     .func-key(@n, @width) {
         width: @width;
         .sprite-pos(4 + @n);
-        background-position-x: left;
     }
     &_esc    { .func-key(1, 37px) }
     &_tab    { .func-key(2, 60px) }

@@ -1,9 +1,42 @@
 html {
-
+    height: 100%;
 }
 
 body {
+    display: inline-block;
     margin: 0;
+    min-width: 100%;
 }
+
+
+.header {
+    height: 30px;
+    background: #ccc;
+}
+
+.demo {
+    display: -webkit-flex;
+    display: flex;
+    min-width: 100%;
+    background: #464646;
+
+    &__editor-box {
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+        -webkit-flex-shrink: 0;
+        flex-shrink: 0;
+        -webkit-align-self: center;
+        align-self: center;
+    }
+
+    &__keymap-box {
+        vertical-align: top;
+    }
+}
+
+.nn {
+    margin: 0 auto;
+}
+
 
 @import 'keymap';
