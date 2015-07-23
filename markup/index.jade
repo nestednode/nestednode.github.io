@@ -3,6 +3,7 @@ html.mac
     head
         meta(charset='utf-8')
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Mono:400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         link(rel='stylesheet' href='index.css')
     body
         .header
@@ -11,13 +12,42 @@ html.mac
                     .nn-logo__part1 Nested
                     .nn-logo__part2 Node
             .header__descr.
-                Библиотека, помогающая разрабатывать<br>
-                пользовательские интерфейсы<br>
-                для работы с древовидными структурами
+                Расширяемый редактор<br>
+                древовидных структур данных
 
         .demo
             .demo__editor-box
             .demo__keymap-box
                 include ./keymap.jade
+
+        .info
+            .info__box
+                .pkg
+                    .pkg__install-cmd bower install nn-nested-node
+                    .pkg__descr.pkg__descr_compact.
+                        пакет с&#160;базовыми компонентами для&#160;построения редактора под&#160;требуемый
+                        тип&#160;узлов
+                    a.pkg__repo-link(href='https://github.com/nestednode/nn-nested-node') GitHub
+                .pkg
+                    .pkg__inherits
+                    .pkg__install-cmd bower install nn-nested-text
+                    .pkg__descr.
+                        редактор вложенных текстовых&#160;узлов
+                    a.pkg__repo-link(href='https://github.com/nestednode/nn-nested-text') GitHub
+            .info__box
+                .info__item.
+                    Язык программирования — <em class='info__em'>TypeScript</em>
+                .info__item.
+                    Пользовательский интерфейс построен на <em class='info__em'>React</em>-компонентах
+                .info__item.
+                    Модули — <em class='info__em'>AMD</em>, пакеты — <em class='info__em'>Bower</em>
+                .info__item.
+                    Сборщик — <em class='info__em'>Gulp</em>
+                .info__item.
+                    Упаковщик — <em class='info__em'>Webpack</em>
+                    (опционально, можно подключать модули напрямую через <em class='info__em'>RequireJs</em>)
+            .info__box-clear
+        .code
+            include ./code.html
 
         script(src='bower_components/requirejs/require.js' data-main='index.js')

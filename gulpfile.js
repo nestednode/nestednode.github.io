@@ -18,7 +18,7 @@ gulp.task('less', function() {
 
 
 gulp.task('default', ['jade', 'less'], function() {
-     gulp.watch('markup/*.jade', ['jade']);
+    gulp.watch('markup/*', ['jade']);
     gulp.watch('style/*.less', ['less']);
 });
 

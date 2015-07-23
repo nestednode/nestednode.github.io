@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 html {
     height: 100%;
 }
@@ -10,6 +12,9 @@ body {
 
 
 @red: #c31100;
+@red-bg: #a50e00;
+@font-family: 'Roboto Condensed', sans-serif;
+@m: 125px;
 
 .header {
     position: relative;
@@ -19,9 +24,8 @@ body {
     background-color: #979797;
     background-image: url('img/tree.jpg');
     background-repeat: no-repeat;
-    border-bottom: 16px solid #a50e00;
+    border-bottom: 16px solid @red-bg;
 
-    @m: 125px;
 
     &__title {
         margin: 135px 0 0 @m;
@@ -31,7 +35,7 @@ body {
         position: absolute;
         bottom: 50px;
         left: @m;
-        font-family: 'Roboto Condensed', sans-serif;
+        font-family: @font-family;
         font-size: 12pt;
         line-height: 1.4;
         font-weight: 300;
@@ -41,7 +45,7 @@ body {
 
 
 .nn-logo {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: @font-family;
     font-size: 18pt;
     color: @red;
 
@@ -86,3 +90,128 @@ body {
 
 
 @import 'keymap';
+
+
+@code-bg: #F0F0F0;
+
+
+.info {
+    background: @red-bg;
+    color: #ececec;
+    font-family: @font-family;
+    font-size: 12pt;
+    line-height: 1.4;
+    font-weight: 300;
+    padding-left: @m - 60px;
+
+
+    &__box {
+        float: left;
+        margin: 55px 40px 0 60px;
+        width: 25em;
+    }
+
+    &__box-clear {
+        clear: both;
+
+        margin-left: 60px;
+
+        width: 0;
+        height: 0;
+
+        @x: 20px;
+        border-left: @x solid transparent;
+        border-right: @x solid transparent;
+        border-bottom: @x solid @code-bg;
+    }
+
+    &__item {
+        margin-bottom: 15px;
+    }
+
+
+    &__em {
+        font-style: normal;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+    }
+}
+
+.pkg {
+    margin-bottom: 30px;
+    position: relative;
+
+    &__install-cmd {
+        display: block;
+        margin-bottom: 5px;
+        font-family: monospace;
+        font-size: 15pt;
+        white-space: nowrap;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+
+        &:before {
+            content: '> ';
+        }
+    }
+
+    &__descr {
+        margin-bottom: 10px;
+
+        &_compact {
+            width: 15em;
+        }
+
+    }
+
+    &__repo-link {
+        display: inline-block;
+        color: #64A9ED;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        font-weight: 500;
+    }
+
+    &__inherits {
+        position: absolute;
+        top: -115px;
+        right: 40px;
+        width: 2em;
+        color: #B0B0B0;
+
+        &:before {
+            content: '△';
+            vertical-align: top;
+        }
+
+        &:after {
+            content: '';
+            display: inline-block;
+            border-left: solid 1px;
+            height: 80px;
+            margin-top: 1em;
+            margin-left: -0.5em;
+        }
+    }
+}
+
+
+.code {
+    padding: 60px 60px 60px @m;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 10.3pt;
+    line-height: 1.5;
+    background-color: @code-bg;
+    //color: #980D00;
+    color: @red;
+
+    .s1 {color: #000000}
+    .s2 {color: #011993}
+    .s3 {color: #7b248d}
+    .s4 {color: #96862F}
+    .s5 {color: #099609}
+    .s6 {color: #2C8B8C}
+
+    a {color: #006EDA;}
+
+}
+
+
