@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import 'bower_components/nn-nested-node/lib/NestedNodeStyle/NestedNodeStyle.css';
+
 
 html {
     height: 100%;
@@ -47,6 +49,7 @@ body {
 .nn-logo {
     font-family: @font-family;
     font-size: 18pt;
+    font-weight: 400;
     color: @red;
 
     &__part1 {
@@ -107,26 +110,20 @@ body {
 
     &__box {
         float: left;
-        margin: 55px 40px 0 60px;
+        margin: 40px 40px 0 60px;
         width: 25em;
     }
 
     &__box-clear {
         clear: both;
-
-        margin-left: 60px;
-
-        width: 0;
-        height: 0;
-
-        @x: 20px;
-        border-left: @x solid transparent;
-        border-right: @x solid transparent;
-        border-bottom: @x solid @code-bg;
     }
 
     &__item {
-        margin-bottom: 15px;
+        margin-bottom: 26px;
+
+        &:first-child {
+            margin-top: 2px;
+        }
     }
 
 
@@ -143,7 +140,7 @@ body {
     &__install-cmd {
         display: block;
         margin-bottom: 5px;
-        font-family: monospace;
+        font-family: 'Roboto Mono', monospace;
         font-size: 15pt;
         white-space: nowrap;
         text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
@@ -171,10 +168,10 @@ body {
 
     &__inherits {
         position: absolute;
-        top: -115px;
+        top: -130px;
         right: 40px;
         width: 2em;
-        color: #B0B0B0;
+        color: rgba(0, 0, 0, 0.2);
 
         &:before {
             content: '△';
@@ -185,7 +182,7 @@ body {
             content: '';
             display: inline-block;
             border-left: solid 1px;
-            height: 80px;
+            height: 108px;
             margin-top: 1em;
             margin-left: -0.5em;
         }
@@ -215,3 +212,38 @@ body {
 }
 
 
+.footer {
+    background: #A9A9A9;
+    padding: 40px 40px 10px @m;
+    font-family: @font-family;
+    font-size: 11pt;
+    line-height: 1.4;
+    font-weight: 300;
+
+
+    &__text {
+        &:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+    }
+
+    &__img {
+        float: left;
+        margin-right: 40px;
+        margin-bottom: 30px;
+    }
+
+
+    &__p {
+        margin-bottom: 12px;
+    }
+
+    &__link {
+        color: #fff;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        white-space: nowrap;
+    }
+
+}

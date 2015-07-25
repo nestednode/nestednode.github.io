@@ -2,8 +2,9 @@
   "name": "nn-site",
   "version": "0.0.1",
   "dependencies": {
-    "nn-nested-text": "../nn-nested-text",
-    "requirejs": "~2.1.18",
-    "require-css": "~0.1.8"
+    "nn-nested-text": "0.0.2"
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.18"
   }
 }

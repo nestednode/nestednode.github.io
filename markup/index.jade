@@ -1,10 +1,12 @@
 doctype
-html.mac
+html
     head
         meta(charset='utf-8')
+        <meta name="viewport" content="width=1140">
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Roboto+Mono:400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         link(rel='stylesheet' href='index.css')
+        title NestedNode
     body
         .header
             .header__title
@@ -38,16 +40,30 @@ html.mac
                 .info__item.
                     Язык программирования — <em class='info__em'>TypeScript</em>
                 .info__item.
-                    Пользовательский интерфейс построен на <em class='info__em'>React</em>-компонентах
+                    Пользовательский интерфейс — <em class='info__em'>React</em>-компоненты
                 .info__item.
-                    Модули — <em class='info__em'>AMD</em>, пакеты — <em class='info__em'>Bower</em>
+                    Модули — <em class='info__em'>AMD</em>
+                .info__item.
+                    Пакеты — <em class='info__em'>Bower</em>
                 .info__item.
                     Сборщик — <em class='info__em'>Gulp</em>
-                .info__item.
-                    Упаковщик — <em class='info__em'>Webpack</em>
-                    (опционально, можно подключать модули напрямую через <em class='info__em'>RequireJs</em>)
             .info__box-clear
         .code
             include ./code.html
 
-        script(src='bower_components/requirejs/require.js' data-main='index.js')
+        .footer
+            .footer__text
+                a.footer__link(href='https://www.flickr.com/photos/asphericlens/4448352145/')
+                    img.footer__img(src='img/tree-orig-preview.jpg')
+                .footer__p.
+                    В&#160;оформлении использована работа
+                    «<a class="footer__link" href='https://www.flickr.com/photos/asphericlens/4448352145/'>single&#160;tree</a>»
+                    (автор фотографии <a class="footer__link" href='https://www.flickr.com/people/asphericlens/'>skoeber</a>,
+                    лицензия <a class="footer__link" href='https://creativecommons.org/licenses/by-nc-sa/2.0/'>CC BY-NC-SA 2.0</a>).
+                .footer__p.
+                    Исходное изображение было модифицировано: повернуто на&#160;90°, кадрировано
+                    и&#160;применено в&#160;качестве фона для&#160;заглавия сайта.
+                .footer__p.
+
+        //-script(src='bower_components/requirejs/require.js' data-main='index.js')
+        script(src='bundle.js')
